@@ -53,6 +53,11 @@
     transform: scale(0.8); /* Lagano smanjenje na klik */
   }
 }
+@media (min-width: 1101px) {
+  .call-button {
+    display: none; /* Skriva gumb kad je širina ekrana veća od 1100px */
+  }
+}
 
 /*** Spinner ***/
 #spinner {
