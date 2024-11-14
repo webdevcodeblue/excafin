@@ -63,3 +63,23 @@ document.querySelectorAll('.navbar-nav .nav-link').forEach((item) => {
     }
   });
 });
+
+// Uvijeti korištenja
+
+// Funkcija za otvaranje modala
+function openModal() {
+  document.getElementById('termsModal').style.display = 'flex';
+}
+
+// Funkcija za zatvaranje modala
+function closeModal() {
+  document.getElementById('termsModal').style.display = 'none';
+}
+
+// Zatvaranje modala klikom izvan sadržaja
+window.onclick = function (event) {
+  var modal = document.getElementById('termsModal');
+  if (event.target == modal) {
+    modal.style.display = 'none';
+  }
+};
