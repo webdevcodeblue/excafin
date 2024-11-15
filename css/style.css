@@ -72,9 +72,9 @@
   /*=======Plutajuci poziv =====*/
   .call-button {
     position: fixed;
-    bottom: 120px;
-    right: 20px;
-    background-color: #ffffffc0; /* Zelena boja za gumb */
+    bottom: 50px;
+    left: 20px;
+    background-color: #ffffffc7; /* Zelena boja za gumb */
     color: rgba(83, 210, 91, 0.758);
     padding: 15px;
     border-radius: 50%; /* Okrugli gumb */
@@ -94,6 +94,7 @@
   .call-button:hover {
     background-color: #7bd78fbc; /* Tamnija zelena boja na hover */
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Pojačana sjena na hover */
+    color: green;
   }
 
   .call-button:active {
@@ -249,6 +250,13 @@
   font-family: 'Font Awesome 5 Free';
   font-weight: 900;
   color: var(--primary);
+}
+.carousel-caption .breadcrumb-item::before {
+  content: '\f111';
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  color: var(--primary);
+  margin-right: 8px; /* ili koliko želite razmak između točke i teksta */
 }
 
 @media (max-width: 768px) {

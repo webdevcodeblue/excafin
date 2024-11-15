@@ -83,3 +83,20 @@ window.onclick = function (event) {
     modal.style.display = 'none';
   }
 };
+
+// kopiraj IBN
+function copyIBAN() {
+  const iban = 'HR4123400091111299876';
+  navigator.clipboard
+    .writeText(iban)
+    .then(() => {
+      const message = document.getElementById('copy-message');
+      message.style.display = 'block';
+      setTimeout(() => {
+        message.style.display = 'none';
+      }, 2000);
+    })
+    .catch((err) => {
+      console.error('Kopiranje nije uspjelo: ', err);
+    });
+}
