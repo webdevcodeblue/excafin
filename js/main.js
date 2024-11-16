@@ -100,3 +100,29 @@ function copyIBAN() {
       console.error('Kopiranje nije uspjelo: ', err);
     });
 }
+
+function provjeriRadnoVrijeme() {
+  const sada = new Date();
+  const sat = sada.getHours();
+  const dan = sada.getDay(); // 0 = Nedjelja, 1 = Ponedjeljak, ..., 6 = Subota
+
+  // Provjera je li trenutno radno vrijeme (Pon-Sub, 08:00 - 18:00)
+  const otvoreno = dan >= 1 && dan <= 6 && sat >= 8 && sat < 18;
+
+  // Ažuriraj oba statusa
+  const statusi = ['status1', 'status2'];
+  statusi.forEach((id) => {
+    const statusElement = document.getElementById(id);
+    if (statusElement) {
+      statusElement.innerHTML = otvoreno
+        ? '<span style="color: green; font-weight: 500;">Trenutno: Otvoreno</span>'
+        : '<span style="color: red; font-weight: 500;">Trenutno: Zatvoreno</span>';
+    }
+  });
+}
+
+// Pozovi funkciju kod učitavanja stranice
+provjeriRadnoVrijeme();
+
+// Ažuriraj status svake minute
+setInterval(provjeriRadnoVrijeme, 60000);
