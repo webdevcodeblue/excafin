@@ -106,8 +106,8 @@ function provjeriRadnoVrijeme() {
   const sat = sada.getHours();
   const dan = sada.getDay(); // 0 = Nedjelja, 1 = Ponedjeljak, ..., 6 = Subota
 
-  // Provjera je li trenutno radno vrijeme (Pon-Sub, 08:00 - 18:00)
-  const otvoreno = dan >= 1 && dan <= 6 && sat >= 8 && sat < 18;
+  // Provjera je li trenutno radno vrijeme (Pon-Sub, 07:00 - 17:00)
+  const otvoreno = dan >= 1 && dan <= 6 && sat >= 7 && sat < 17;
 
   // Ažuriraj oba statusa
   const statusi = ['status1', 'status2'];
